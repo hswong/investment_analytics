@@ -189,7 +189,7 @@ def line(df, val_1, val_2):
     plot(fig)
 
 
-portfolio_df = pd.read_csv('test_stock_transactions.csv')
+portfolio_df = pd.read_csv('data/test_stock_transactions.csv')
 portfolio_df['Open date'] = pd.to_datetime(portfolio_df['Open date'])
 
 symbols = portfolio_df.Symbol.unique()
