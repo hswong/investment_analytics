@@ -193,12 +193,12 @@ portfolio_df = pd.read_csv('data/test_stock_transactions.csv')
 portfolio_df['Open date'] = pd.to_datetime(portfolio_df['Open date'])
 
 symbols = portfolio_df.Symbol.unique()
-stocks_start = datetime.datetime(2014, 1, 1)
-stocks_end = datetime.datetime(2019, 12, 15)
+stocks_start = datetime.datetime(2015, 1, 1)
+stocks_end = datetime.datetime(2021, 6, 23)
 
 daily_adj_close = get_data(symbols, stocks_start, stocks_end)
 daily_adj_close = daily_adj_close[['Close']].reset_index()
-daily_benchmark = get_benchmark(['ACWI'], stocks_start, stocks_end)
+daily_benchmark = get_benchmark(['SPY'], stocks_start, stocks_end)
 daily_benchmark = daily_benchmark[['Date', 'Close']]
 market_cal = create_market_cal(stocks_start, stocks_end)
 # Start Balance for the start date specified
@@ -213,5 +213,5 @@ for pos in positions_per_day:
 combined_df = per_day_portfolio_calcs(positions_per_day, daily_benchmark,
                                       daily_adj_close, stocks_start)
 
-#line_facets(combined_df, 'Ticker Return', 'Benchmark Return')
-#line(combined_df, 'Stock Gain / (Loss)', 'Benchmark Gain / (Loss)')
+line_facets(combined_df, 'Ticker Return', 'Benchmark Return')
+line(combined_df, 'Stock Gain / (Loss)', 'Benchmark Gain / (Loss)')
