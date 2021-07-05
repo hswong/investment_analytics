@@ -35,6 +35,8 @@ class HoldingDetailField(Enum):
     TradeDateTime = "trade datetime"
     TradeDate = "trade_date" #(Date)
 
+    OpenQuantity = "open_quantity" # Quantity that has been opened in the associated transaction 
+    ClosedQuantity = "closed_quantity" # Quantity that has been closed off
 
 '''
 This class holds all the details related to a valued holding. Some holdings may not be valued and in those cases we use HoldingDetailField instead
