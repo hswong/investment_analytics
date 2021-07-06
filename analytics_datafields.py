@@ -15,19 +15,25 @@ class TransactionType(Enum):
     Sell = "sell"
     Split = "split"
 
+class QuantityType(Enum):
+    Share = "share" #Default
+    Nominal = "nominal" # Bonds or structured products, face value
+    Ounce = "ounce" # Weight usually used for Gold, Silver etc
+
 class TransactionDetails(Enum):
     UserID = "user id"
     Asset = "asset" # (AssetIdentifier)
     TransactionDate = "transaction_date" #(Date)
     TradeDateTime = "trade datetime" #(Datetime)
     Quantity = "quantity"
+    QuantityType = "quantity_type" # (QuantityType)
     TransactionType = "transaction_type" #(TransactionType)
     CostPrice = "cost price"
     Reference1 = "reference1" # Order ID or other FI reference
-
     
 class HoldingDetailField(Enum):
     Quantity = "quantity"
+    QuantityType = 'quantity_type'
     Asset = "Asset" # (AssetIdentifier)
     AdjustedCostPerUnit = "adjusted cost per unit"
     TotalGrossCostBasis = "total gross cost" # Total Gross Cost (excludes fees & charges)

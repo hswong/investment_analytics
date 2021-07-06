@@ -8,7 +8,7 @@ import csv
 from data_loading_helpers import *
 from data_transformation_helpers import *
 
-txn_df = pd.read_csv('data/Account_Extract.YHD6sYsXqtpIh9RB.user.securities.transactions.csv')
+txn_df = pd.read_csv('data/Account_Extract.YHD6sYsXqtpIh9RB.user.securities.transactions.csv', thousands=',')
 
 # TODO - change this to trigger off correct mapper depending on source files
 load_mapper_orovault(txn_df)
