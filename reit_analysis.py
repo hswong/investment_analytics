@@ -11,8 +11,8 @@ def price_div_ratio(price, ratio):
 # Read data from file 'filename.csv' 
 # (in the same directory that your python process is based)
 # Control delimiters, rows, column names with read_csv (see later) 
-div_data = pd.read_csv("A17U.SI_div.csv") 
-price_data = pd.read_csv("A17U.SI.csv") 
+div_data = pd.read_csv("data/A17U.SI_div.csv") 
+price_data = pd.read_csv("data/A17U.SI.csv") 
 
 #print(price_data.head)
 
